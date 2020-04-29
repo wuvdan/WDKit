@@ -24,6 +24,7 @@
 		485419622457C1660076B108 /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 485419532457C1660076B108 /* CollectionViewCell.m */; };
 		485419632457C1660076B108 /* ImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 485419572457C1660076B108 /* ImageView.m */; };
 		485419642457C1660076B108 /* View.m in Sources */ = {isa = PBXBuildFile; fileRef = 485419582457C1660076B108 /* View.m */; };
+		48FAD2F22459524E00B2D609 /* UIView+WDKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 48FAD2F12459524E00B2D609 /* UIView+WDKit.m */; };
 		E0F33BD65AD79FFA8EABB3EA /* libPods-WDKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E2068DC3CDA1D874B9FB2B7 /* libPods-WDKit.a */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +63,8 @@
 		485419592457C1660076B108 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		4854195A2457C1660076B108 /* TextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextView.h; sourceTree = "<group>"; };
 		4854195B2457C1660076B108 /* UIKitHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIKitHeader.h; sourceTree = "<group>"; };
+		48FAD2F02459524E00B2D609 /* UIView+WDKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+WDKit.h"; sourceTree = "<group>"; };
+		48FAD2F12459524E00B2D609 /* UIView+WDKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+WDKit.m"; sourceTree = "<group>"; };
 		4E2068DC3CDA1D874B9FB2B7 /* libPods-WDKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WDKit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8961221F39C73929864DAA42 /* Pods-WDKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WDKit.release.xcconfig"; path = "Target Support Files/Pods-WDKit/Pods-WDKit.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -125,6 +128,7 @@
 		485419482457C1660076B108 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				48FAD2F3245962DC00B2D609 /* Category */,
 				485419662457C1870076B108 /* Custom */,
 				485419652457C1780076B108 /* SubClass */,
 			);
@@ -165,6 +169,15 @@
 				485419452457C14E0076B108 /* WDNavigationView.m */,
 			);
 			path = Custom;
+			sourceTree = "<group>";
+		};
+		48FAD2F3245962DC00B2D609 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				48FAD2F02459524E00B2D609 /* UIView+WDKit.h */,
+				48FAD2F12459524E00B2D609 /* UIView+WDKit.m */,
+			);
+			path = Category;
 			sourceTree = "<group>";
 		};
 		4C96959B88D5324449AC8C8C /* Frameworks */ = {
@@ -288,6 +301,7 @@
 				48208B552457FCA7007AEF76 /* TableViewController.m in Sources */,
 				485419632457C1660076B108 /* ImageView.m in Sources */,
 				485419202457C0D10076B108 /* main.m in Sources */,
+				48FAD2F22459524E00B2D609 /* UIView+WDKit.m in Sources */,
 				485419122457C0D00076B108 /* AppDelegate.m in Sources */,
 				4854195F2457C1660076B108 /* TextView.m in Sources */,
 				4854195C2457C1660076B108 /* TableViewCell.m in Sources */,

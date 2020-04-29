@@ -11,7 +11,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface TextView : UITextView
-
+@property (nonatomic, copy) NSString *placeholder;
+@property (nonatomic, strong) UIColor *placeHolderColor;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -11,8 +11,6 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface Label : UILabel
-+ (instancetype)initWithText:(NSString *)text;
-+ (instancetype)initWithTextColor:(UIColor *)textColor;
 + (instancetype)initWithTextColor:(UIColor *)textColor font:(UIFont *)textFont;
 + (instancetype)initWithTextColor:(UIColor *)textColor font:(UIFont *)textFont numOfLines:(NSUInteger)numOfLines;
 @end

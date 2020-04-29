@@ -26,4 +26,8 @@
 
 #import "WDNavigationView.h"
 
+#pragma mark - Category
+
+#import "UIView+WDKit.h"
+
 #endif /* UIKitHeader_h */

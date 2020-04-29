@@ -11,6 +11,7 @@
 
 @interface ViewController ()
 @property (nonatomic, strong) View *testView;
+@property (nonatomic, strong) TextView *textView;
 @end
 
 @implementation ViewController
@@ -20,7 +21,17 @@
     self.navigationView.title = @"标题";
     [self.view addSubview:self.navigationView];
     
-    UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeInfoLight];
+    Button *rightButton = [Button buttonWithType:UIButtonTypeInfoLight];
+    [rightButton handleEventBlock:^(UIButton * _Nonnull sender) {
+        NSLog(@"=====");
+    }];
+    
+    
+    [rightButton setupBackgroundColor:[UIColor redColor] forState:UIControlStateNormal];
+    [rightButton setupBackgroundColor:[UIColor greenColor] forState:UIControlStateHighlighted];
+//    [rightButton setupBackgroundColor:[UIColor orangeColor] forState:UIControlStateSelected];
+
+    
     UIButton *rightButton1 = [UIButton buttonWithType:UIButtonTypeContactAdd];
     UIButton *rightButton2 = [UIButton buttonWithType:UIButtonTypeContactAdd];
     
@@ -28,16 +39,25 @@
     
     [self.navigationView addLeftViews:@[rightButton1]];
     
-    
+        
     
     self.testView = [[View alloc] init];
-    [self.testView setupBoderColor:[UIColor redColor] borderDirection:(ViewBorderDirectionAll)];
-    self.testView.backgroundColor = [UIColor whiteColor];
+    self.testView.backgroundColor = [UIColor orangeColor];
     [self.view addSubview:self.testView];
+    
+    self.textView = [[TextView alloc] init];
+    self.textView.placeholder = @"1111";
+    [self.textView setupBoderColor:[UIColor redColor] width:1 borderDirection:ViewBorderDirectionAll];
+    self.textView.font = [UIFont systemFontOfSize:15];
+    [self.textView setupShadowColor:[UIColor redColor] opacity:0.8 offset:CGSizeMake(5, 5) shadowRadius:5];
+    [self.view addSubview:self.textView];
 }
+
 
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
+    
+    
     
     if (UIScreen.mainScreen.bounds.size.width < UIScreen.mainScreen.bounds.size.height) {
         self.navigationView.frame = CGRectMake(0, 0, UIScreen.mainScreen.bounds.size.width, 44 + UIApplication.sharedApplication.statusBarFrame.size.height);
@@ -48,6 +68,11 @@
     [self.view bringSubviewToFront:self.navigationView];
     
     self.testView.frame = CGRectMake(100, 100, 100, 100);
+    
+    [self.testView setupRoundedRect:self.testView.bounds cornerRadii:CGSizeMake(20, 20) byRoundingCorners:(UIRectCornerAllCorners)];
+    
+    self.textView.frame = CGRectMake(100, 250, 300, 100);
+
 }
 
 - (WDNavigationView *)navigationView {

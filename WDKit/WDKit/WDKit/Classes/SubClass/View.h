@@ -10,17 +10,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef NS_OPTIONS(NSUInteger, ViewBorderDirection) {
-    ViewBorderDirectionTop = 1 << 0,
-    ViewBorderDirectionBottom = 1 << 1,
-    ViewBorderDirectionLeft = 1 << 2,
-    ViewBorderDirectionRight = 1 << 3,
-    ViewBorderDirectionAll = 1 << 4,
-};
-
-
 @interface View : UIView
-- (void)setupBoderColor:(UIColor *)color borderDirection:(ViewBorderDirection)borderDirection;
+
 @end
 
 NS_ASSUME_NONNULL_END
