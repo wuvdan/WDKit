@@ -12,6 +12,7 @@
 @interface ViewController ()
 @property (nonatomic, strong) View *testView;
 @property (nonatomic, strong) TextView *textView;
+@property (nonatomic, strong) TextField *textField;
 @end
 
 @implementation ViewController
@@ -51,13 +52,15 @@
     self.textView.font = [UIFont systemFontOfSize:15];
     [self.textView setupShadowColor:[UIColor redColor] opacity:0.8 offset:CGSizeMake(5, 5) shadowRadius:5];
     [self.view addSubview:self.textView];
+    
+    self.textField = [[TextField alloc] init];
+    [self.textField setupPlaceholder:@"请输入内容" textColor:[UIColor redColor]];
+    self.textField.borderStyle = UITextBorderStyleRoundedRect;
+    [self.view addSubview:self.textField];
 }
-
 
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
-    
-    
     
     if (UIScreen.mainScreen.bounds.size.width < UIScreen.mainScreen.bounds.size.height) {
         self.navigationView.frame = CGRectMake(0, 0, UIScreen.mainScreen.bounds.size.width, 44 + UIApplication.sharedApplication.statusBarFrame.size.height);
@@ -72,6 +75,8 @@
     [self.testView setupRoundedRect:self.testView.bounds cornerRadii:CGSizeMake(20, 20) byRoundingCorners:(UIRectCornerAllCorners)];
     
     self.textView.frame = CGRectMake(100, 250, 300, 100);
+    
+    self.textField.frame = CGRectMake(100, 360, 300, 50);
 
 }
 

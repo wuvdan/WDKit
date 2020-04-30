@@ -9,5 +9,8 @@
 #import "TextField.h"
 
 @implementation TextField
-
+- (void)setupPlaceholder:(NSString *)placeholder textColor:(UIColor *)color {
+    self.attributedPlaceholder = [[NSAttributedString alloc] initWithString:placeholder
+                                                                 attributes:@{NSForegroundColorAttributeName : color}];
+}
 @end
