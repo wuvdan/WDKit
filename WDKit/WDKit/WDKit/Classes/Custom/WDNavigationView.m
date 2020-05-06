@@ -51,18 +51,18 @@
 }
 
 - (void)initializationSubViews {
-    
-    // 默认背景颜色
     self.backgroundColor = [UIColor colorWithRed:248 / 255.0 green:248 / 255.0 blue:248 / 255.0 alpha:1];
     
     self.hidenShadow = NO;
     
-    self.leftSpaceStackView = [[UIStackView alloc] initWithArrangedSubviews:@[]];
+    self.leftSpaceStackView = [[UIStackView alloc] init];
     self.leftSpaceStackView.axis = UILayoutConstraintAxisHorizontal;
+    self.leftSpaceStackView.translatesAutoresizingMaskIntoConstraints = NO;
     [self addSubview:self.leftSpaceStackView];
     
-    self.rightSpaceStackView = [[UIStackView alloc] initWithArrangedSubviews:@[]];
+    self.rightSpaceStackView = [[UIStackView alloc] init];
     self.rightSpaceStackView.axis = UILayoutConstraintAxisHorizontal;
+    self.rightSpaceStackView.translatesAutoresizingMaskIntoConstraints = NO;
     [self addSubview:self.rightSpaceStackView];
     
     self.shadowView = [[UIView alloc] init];
@@ -84,14 +84,12 @@
     [super layoutSubviews];
     
     // 使用Autolayout为了不设置固定的宽
-    self.leftSpaceStackView.translatesAutoresizingMaskIntoConstraints = NO;
     [self addConstraints:@[
                            [NSLayoutConstraint constraintWithItem:self.leftSpaceStackView attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeLeading multiplier:1 constant:15],
                            [NSLayoutConstraint constraintWithItem:self.leftSpaceStackView attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeBottom multiplier:1 constant:0],
                            [NSLayoutConstraint constraintWithItem:self.leftSpaceStackView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeHeight multiplier:1 constant:44],
                            ]];
     
-    self.rightSpaceStackView.translatesAutoresizingMaskIntoConstraints = NO;
     [self addConstraints:@[
                            [NSLayoutConstraint constraintWithItem:self.rightSpaceStackView attribute:NSLayoutAttributeTrailing relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeTrailing multiplier:1 constant:-15],
                            [NSLayoutConstraint constraintWithItem:self.rightSpaceStackView attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeBottom multiplier:1 constant:0],
@@ -114,7 +112,10 @@
 }
 
 - (CGFloat)titleWidth:(NSString *)text {
-    return [text boundingRectWithSize:CGSizeMake(CGFLOAT_MAX, 44) options:(NSStringDrawingUsesLineFragmentOrigin) attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:18 weight:UIFontWeightBold]} context:nil].size.width;
+    return [text boundingRectWithSize:CGSizeMake(CGFLOAT_MAX, 44)
+                              options:(NSStringDrawingUsesLineFragmentOrigin)
+                           attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:18 weight:UIFontWeightBold]}
+                              context:nil].size.width;
 }
 @end
 

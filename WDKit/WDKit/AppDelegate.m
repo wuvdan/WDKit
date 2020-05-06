@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import <UIKit/UIKit.h>
-
+#import "UIKitHeader.h"
 @interface AppDelegate ()
 
 @end
@@ -20,6 +20,8 @@
     // Override point for customization after application launch.
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(observerTakeScreenshotNotification:) name:UIApplicationUserDidTakeScreenshotNotification object:nil];
+    
+
     
     return YES;
 }

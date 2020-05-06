@@ -9,25 +9,20 @@
 #ifndef UIKitHeader_h
 #define UIKitHeader_h
 
-#pragma mark - Sub Class
-
-#import "View.h"
-#import "Button.h"
-#import "Label.h"
-#import "ImageView.h"
-#import "TableViewCell.h"
-#import "CollectionViewCell.h"
-#import "TextView.h"
-#import "TextField.h"
-
-#import "ViewController.h"
-
-#pragma mark - Custom View
+#import "Controller.h"
+#import "TableViewController.h"
 
 #import "WDNavigationView.h"
 
-#pragma mark - Category
-
+#import "UIControl+WDKit.h"
 #import "UIView+WDKit.h"
-
+#import "UILabel+WDKit.h"
+#import "UIButton+WDKit.h"
+#import "UITextField+WDKit.h"
+#import "UITextView+WDKit.h"
+#import "UIImage+WDKit.h"
+#import "UIScrollView+WDKit.h"
+#import "UIFont+WDKit.h"
+#import "UIColor+WDKit.h"
+#import "UINavigationController+WDKit.h"
 #endif /* UIKitHeader_h */

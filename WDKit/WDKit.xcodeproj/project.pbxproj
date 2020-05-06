@@ -15,15 +15,19 @@
 		4854191D2457C0D10076B108 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4854191B2457C0D10076B108 /* LaunchScreen.storyboard */; };
 		485419202457C0D10076B108 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4854191F2457C0D10076B108 /* main.m */; };
 		485419462457C14E0076B108 /* WDNavigationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 485419452457C14E0076B108 /* WDNavigationView.m */; };
-		4854195C2457C1660076B108 /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4854194B2457C1660076B108 /* TableViewCell.m */; };
-		4854195D2457C1660076B108 /* TextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 4854194C2457C1660076B108 /* TextField.m */; };
-		4854195E2457C1660076B108 /* Button.m in Sources */ = {isa = PBXBuildFile; fileRef = 4854194D2457C1660076B108 /* Button.m */; };
-		4854195F2457C1660076B108 /* TextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4854194E2457C1660076B108 /* TextView.m */; };
 		485419602457C1660076B108 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4854194F2457C1660076B108 /* ViewController.m */; };
-		485419612457C1660076B108 /* Label.m in Sources */ = {isa = PBXBuildFile; fileRef = 485419522457C1660076B108 /* Label.m */; };
-		485419622457C1660076B108 /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 485419532457C1660076B108 /* CollectionViewCell.m */; };
-		485419632457C1660076B108 /* ImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 485419572457C1660076B108 /* ImageView.m */; };
-		485419642457C1660076B108 /* View.m in Sources */ = {isa = PBXBuildFile; fileRef = 485419582457C1660076B108 /* View.m */; };
+		489226F524625E69003DFCBC /* UIImage+WDKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 489226F424625E69003DFCBC /* UIImage+WDKit.m */; };
+		489226F82462651B003DFCBC /* UIScrollView+WDKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 489226F72462651B003DFCBC /* UIScrollView+WDKit.m */; };
+		489226FB2462659E003DFCBC /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 489226FA2462659E003DFCBC /* TestViewController.m */; };
+		489226FE24626835003DFCBC /* NodataView.m in Sources */ = {isa = PBXBuildFile; fileRef = 489226FD24626835003DFCBC /* NodataView.m */; };
+		4892270724628760003DFCBC /* UIFont+WDKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 4892270624628760003DFCBC /* UIFont+WDKit.m */; };
+		4892270D246287AA003DFCBC /* UIColor+WDKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 4892270C246287AA003DFCBC /* UIColor+WDKit.m */; };
+		4892271324628D76003DFCBC /* UILabel+WDKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 4892271224628D76003DFCBC /* UILabel+WDKit.m */; };
+		4892271624628DD5003DFCBC /* UIButton+WDKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 4892271524628DD5003DFCBC /* UIButton+WDKit.m */; };
+		4892271C24628F52003DFCBC /* UITextField+WDKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 4892271B24628F52003DFCBC /* UITextField+WDKit.m */; };
+		4892271F24628FCA003DFCBC /* UITextView+WDKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 4892271E24628FCA003DFCBC /* UITextView+WDKit.m */; };
+		4892272724629DDC003DFCBC /* UINavigationController+WDKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 4892272624629DDC003DFCBC /* UINavigationController+WDKit.m */; };
+		4892272A24629F83003DFCBC /* UIControl+WDKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 4892272924629F83003DFCBC /* UIControl+WDKit.m */; };
 		48FAD2F22459524E00B2D609 /* UIView+WDKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 48FAD2F12459524E00B2D609 /* UIView+WDKit.m */; };
 		E0F33BD65AD79FFA8EABB3EA /* libPods-WDKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E2068DC3CDA1D874B9FB2B7 /* libPods-WDKit.a */; };
 /* End PBXBuildFile section */
@@ -44,25 +48,33 @@
 		4854191F2457C0D10076B108 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		485419442457C14E0076B108 /* WDNavigationView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDNavigationView.h; sourceTree = "<group>"; };
 		485419452457C14E0076B108 /* WDNavigationView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDNavigationView.m; sourceTree = "<group>"; };
-		485419492457C1660076B108 /* CollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewCell.h; sourceTree = "<group>"; };
-		4854194A2457C1660076B108 /* Label.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Label.h; sourceTree = "<group>"; };
-		4854194B2457C1660076B108 /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
-		4854194C2457C1660076B108 /* TextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextField.m; sourceTree = "<group>"; };
-		4854194D2457C1660076B108 /* Button.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Button.m; sourceTree = "<group>"; };
-		4854194E2457C1660076B108 /* TextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextView.m; sourceTree = "<group>"; };
 		4854194F2457C1660076B108 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		485419502457C1660076B108 /* View.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = View.h; sourceTree = "<group>"; };
-		485419512457C1660076B108 /* ImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageView.h; sourceTree = "<group>"; };
-		485419522457C1660076B108 /* Label.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Label.m; sourceTree = "<group>"; };
-		485419532457C1660076B108 /* CollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewCell.m; sourceTree = "<group>"; };
-		485419542457C1660076B108 /* Button.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Button.h; sourceTree = "<group>"; };
-		485419552457C1660076B108 /* TextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextField.h; sourceTree = "<group>"; };
-		485419562457C1660076B108 /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
-		485419572457C1660076B108 /* ImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageView.m; sourceTree = "<group>"; };
-		485419582457C1660076B108 /* View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = View.m; sourceTree = "<group>"; };
 		485419592457C1660076B108 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		4854195A2457C1660076B108 /* TextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextView.h; sourceTree = "<group>"; };
 		4854195B2457C1660076B108 /* UIKitHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIKitHeader.h; sourceTree = "<group>"; };
+		489226F324625E69003DFCBC /* UIImage+WDKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+WDKit.h"; sourceTree = "<group>"; };
+		489226F424625E69003DFCBC /* UIImage+WDKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+WDKit.m"; sourceTree = "<group>"; };
+		489226F62462651B003DFCBC /* UIScrollView+WDKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+WDKit.h"; sourceTree = "<group>"; };
+		489226F72462651B003DFCBC /* UIScrollView+WDKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+WDKit.m"; sourceTree = "<group>"; };
+		489226F92462659E003DFCBC /* TestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
+		489226FA2462659E003DFCBC /* TestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
+		489226FC24626835003DFCBC /* NodataView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NodataView.h; sourceTree = "<group>"; };
+		489226FD24626835003DFCBC /* NodataView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NodataView.m; sourceTree = "<group>"; };
+		4892270524628760003DFCBC /* UIFont+WDKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIFont+WDKit.h"; sourceTree = "<group>"; };
+		4892270624628760003DFCBC /* UIFont+WDKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIFont+WDKit.m"; sourceTree = "<group>"; };
+		4892270B246287AA003DFCBC /* UIColor+WDKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+WDKit.h"; sourceTree = "<group>"; };
+		4892270C246287AA003DFCBC /* UIColor+WDKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+WDKit.m"; sourceTree = "<group>"; };
+		4892271124628D76003DFCBC /* UILabel+WDKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UILabel+WDKit.h"; sourceTree = "<group>"; };
+		4892271224628D76003DFCBC /* UILabel+WDKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UILabel+WDKit.m"; sourceTree = "<group>"; };
+		4892271424628DD5003DFCBC /* UIButton+WDKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+WDKit.h"; sourceTree = "<group>"; };
+		4892271524628DD5003DFCBC /* UIButton+WDKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+WDKit.m"; sourceTree = "<group>"; };
+		4892271A24628F52003DFCBC /* UITextField+WDKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITextField+WDKit.h"; sourceTree = "<group>"; };
+		4892271B24628F52003DFCBC /* UITextField+WDKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITextField+WDKit.m"; sourceTree = "<group>"; };
+		4892271D24628FCA003DFCBC /* UITextView+WDKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITextView+WDKit.h"; sourceTree = "<group>"; };
+		4892271E24628FCA003DFCBC /* UITextView+WDKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITextView+WDKit.m"; sourceTree = "<group>"; };
+		4892272524629DDC003DFCBC /* UINavigationController+WDKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+WDKit.h"; sourceTree = "<group>"; };
+		4892272624629DDC003DFCBC /* UINavigationController+WDKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+WDKit.m"; sourceTree = "<group>"; };
+		4892272824629F83003DFCBC /* UIControl+WDKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIControl+WDKit.h"; sourceTree = "<group>"; };
+		4892272924629F83003DFCBC /* UIControl+WDKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIControl+WDKit.m"; sourceTree = "<group>"; };
 		48FAD2F02459524E00B2D609 /* UIView+WDKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+WDKit.h"; sourceTree = "<group>"; };
 		48FAD2F12459524E00B2D609 /* UIView+WDKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+WDKit.m"; sourceTree = "<group>"; };
 		4E2068DC3CDA1D874B9FB2B7 /* libPods-WDKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WDKit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -107,6 +119,10 @@
 				485419112457C0D00076B108 /* AppDelegate.m */,
 				485419592457C1660076B108 /* ViewController.h */,
 				4854194F2457C1660076B108 /* ViewController.m */,
+				489226F92462659E003DFCBC /* TestViewController.h */,
+				489226FA2462659E003DFCBC /* TestViewController.m */,
+				489226FC24626835003DFCBC /* NodataView.h */,
+				489226FD24626835003DFCBC /* NodataView.m */,
 				485419162457C0D00076B108 /* Main.storyboard */,
 				485419192457C0D10076B108 /* Assets.xcassets */,
 				4854191B2457C0D10076B108 /* LaunchScreen.storyboard */,
@@ -138,22 +154,6 @@
 		485419652457C1780076B108 /* SubClass */ = {
 			isa = PBXGroup;
 			children = (
-				485419542457C1660076B108 /* Button.h */,
-				4854194D2457C1660076B108 /* Button.m */,
-				485419492457C1660076B108 /* CollectionViewCell.h */,
-				485419532457C1660076B108 /* CollectionViewCell.m */,
-				485419512457C1660076B108 /* ImageView.h */,
-				485419572457C1660076B108 /* ImageView.m */,
-				4854194A2457C1660076B108 /* Label.h */,
-				485419522457C1660076B108 /* Label.m */,
-				485419562457C1660076B108 /* TableViewCell.h */,
-				4854194B2457C1660076B108 /* TableViewCell.m */,
-				485419552457C1660076B108 /* TextField.h */,
-				4854194C2457C1660076B108 /* TextField.m */,
-				4854195A2457C1660076B108 /* TextView.h */,
-				4854194E2457C1660076B108 /* TextView.m */,
-				485419502457C1660076B108 /* View.h */,
-				485419582457C1660076B108 /* View.m */,
 				48208B502457FC5C007AEF76 /* Controller.h */,
 				48208B512457FC5C007AEF76 /* Controller.m */,
 				48208B532457FCA7007AEF76 /* TableViewController.h */,
@@ -176,6 +176,26 @@
 			children = (
 				48FAD2F02459524E00B2D609 /* UIView+WDKit.h */,
 				48FAD2F12459524E00B2D609 /* UIView+WDKit.m */,
+				4892271424628DD5003DFCBC /* UIButton+WDKit.h */,
+				4892271524628DD5003DFCBC /* UIButton+WDKit.m */,
+				489226F324625E69003DFCBC /* UIImage+WDKit.h */,
+				489226F424625E69003DFCBC /* UIImage+WDKit.m */,
+				489226F62462651B003DFCBC /* UIScrollView+WDKit.h */,
+				489226F72462651B003DFCBC /* UIScrollView+WDKit.m */,
+				4892270524628760003DFCBC /* UIFont+WDKit.h */,
+				4892270624628760003DFCBC /* UIFont+WDKit.m */,
+				4892270B246287AA003DFCBC /* UIColor+WDKit.h */,
+				4892270C246287AA003DFCBC /* UIColor+WDKit.m */,
+				4892271124628D76003DFCBC /* UILabel+WDKit.h */,
+				4892271224628D76003DFCBC /* UILabel+WDKit.m */,
+				4892271A24628F52003DFCBC /* UITextField+WDKit.h */,
+				4892271B24628F52003DFCBC /* UITextField+WDKit.m */,
+				4892271D24628FCA003DFCBC /* UITextView+WDKit.h */,
+				4892271E24628FCA003DFCBC /* UITextView+WDKit.m */,
+				4892272524629DDC003DFCBC /* UINavigationController+WDKit.h */,
+				4892272624629DDC003DFCBC /* UINavigationController+WDKit.m */,
+				4892272824629F83003DFCBC /* UIControl+WDKit.h */,
+				4892272924629F83003DFCBC /* UIControl+WDKit.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -293,20 +313,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				485419642457C1660076B108 /* View.m in Sources */,
+				489226F524625E69003DFCBC /* UIImage+WDKit.m in Sources */,
+				4892271C24628F52003DFCBC /* UITextField+WDKit.m in Sources */,
+				489226FE24626835003DFCBC /* NodataView.m in Sources */,
+				4892271624628DD5003DFCBC /* UIButton+WDKit.m in Sources */,
 				48208B522457FC5C007AEF76 /* Controller.m in Sources */,
 				485419602457C1660076B108 /* ViewController.m in Sources */,
-				4854195E2457C1660076B108 /* Button.m in Sources */,
-				4854195D2457C1660076B108 /* TextField.m in Sources */,
+				4892270724628760003DFCBC /* UIFont+WDKit.m in Sources */,
+				4892272A24629F83003DFCBC /* UIControl+WDKit.m in Sources */,
+				4892270D246287AA003DFCBC /* UIColor+WDKit.m in Sources */,
+				4892271324628D76003DFCBC /* UILabel+WDKit.m in Sources */,
 				48208B552457FCA7007AEF76 /* TableViewController.m in Sources */,
-				485419632457C1660076B108 /* ImageView.m in Sources */,
 				485419202457C0D10076B108 /* main.m in Sources */,
+				4892272724629DDC003DFCBC /* UINavigationController+WDKit.m in Sources */,
+				4892271F24628FCA003DFCBC /* UITextView+WDKit.m in Sources */,
 				48FAD2F22459524E00B2D609 /* UIView+WDKit.m in Sources */,
+				489226FB2462659E003DFCBC /* TestViewController.m in Sources */,
 				485419122457C0D00076B108 /* AppDelegate.m in Sources */,
-				4854195F2457C1660076B108 /* TextView.m in Sources */,
-				4854195C2457C1660076B108 /* TableViewCell.m in Sources */,
-				485419612457C1660076B108 /* Label.m in Sources */,
-				485419622457C1660076B108 /* CollectionViewCell.m in Sources */,
+				489226F82462651B003DFCBC /* UIScrollView+WDKit.m in Sources */,
 				485419462457C14E0076B108 /* WDNavigationView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

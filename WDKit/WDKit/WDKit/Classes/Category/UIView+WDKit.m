@@ -7,37 +7,111 @@
 //
 
 #import "UIView+WDKit.h"
-#import <objc/runtime.h>
-
-static const void *ext_topBorderKey;
-static const void *ext_leftBorderKey;
-static const void *ext_rightBorderKey;
-static const void *ext_bottomBorderKey;
-static const void *ext_widthKey;
-
-@interface UIView ()
-@property (nonatomic, strong) UIView *topBorder;
-@property (nonatomic, strong) UIView *leftBorder;
-@property (nonatomic, strong) UIView *rightBorder;
-@property (nonatomic, strong) UIView *bottomBorder;
-@property (nonatomic, assign) CGFloat borderWidth;
-@end
 
 @implementation UIView (WDKit)
 
-+ (void)load {
-    [super load];
-    method_exchangeImplementations(class_getInstanceMethod(self.class, NSSelectorFromString(@"layoutSubviews")),
-                                   class_getInstanceMethod(self.class, @selector(ext_layoutSubviews)));
+- (CGFloat)left {
+    return self.frame.origin.x;
 }
 
-- (void)ext_layoutSubviews {
-    [self ext_layoutSubviews];
+- (void)setLeft:(CGFloat)x {
+    CGRect frame = self.frame;
+    frame.origin.x = x;
+    self.frame = frame;
+}
 
-    self.topBorder.frame = CGRectMake(0, 0, CGRectGetWidth(self.frame), self.borderWidth);
-    self.bottomBorder.frame = CGRectMake(0, CGRectGetHeight(self.frame) - self.borderWidth, CGRectGetWidth(self.frame), self.borderWidth);
-    self.leftBorder.frame = CGRectMake(0, 0, self.borderWidth, CGRectGetHeight(self.frame));
-    self.rightBorder.frame = CGRectMake(CGRectGetWidth(self.frame) - self.borderWidth, 0, self.borderWidth, CGRectGetHeight(self.frame));
+- (CGFloat)top {
+    return self.frame.origin.y;
+}
+
+- (void)setTop:(CGFloat)y {
+    CGRect frame = self.frame;
+    frame.origin.y = y;
+    self.frame = frame;
+}
+
+- (CGFloat)right {
+    return self.frame.origin.x + self.frame.size.width;
+}
+
+- (void)setRight:(CGFloat)right {
+    CGRect frame = self.frame;
+    frame.origin.x = right - frame.size.width;
+    self.frame = frame;
+}
+
+- (CGFloat)bottom {
+    return self.frame.origin.y + self.frame.size.height;
+}
+
+- (void)setBottom:(CGFloat)bottom {
+    CGRect frame = self.frame;
+    frame.origin.y = bottom - frame.size.height;
+    self.frame = frame;
+}
+
+- (CGFloat)width {
+    return self.frame.size.width;
+}
+
+- (void)setWidth:(CGFloat)width {
+    CGRect frame = self.frame;
+    frame.size.width = width;
+    self.frame = frame;
+}
+
+- (CGFloat)height {
+    return self.frame.size.height;
+}
+
+- (void)setHeight:(CGFloat)height {
+    CGRect frame = self.frame;
+    frame.size.height = height;
+    self.frame = frame;
+}
+
+- (CGFloat)centerX {
+    return self.center.x;
+}
+
+- (void)setCenterX:(CGFloat)centerX {
+    self.center = CGPointMake(centerX, self.center.y);
+}
+
+- (CGFloat)centerY {
+    return self.center.y;
+}
+
+- (void)setCenterY:(CGFloat)centerY {
+    self.center = CGPointMake(self.center.x, centerY);
+}
+
+- (CGPoint)origin {
+    return self.frame.origin;
+}
+
+- (void)setOrigin:(CGPoint)origin {
+    CGRect frame = self.frame;
+    frame.origin = origin;
+    self.frame = frame;
+}
+
+- (CGSize)size {
+    return self.frame.size;
+}
+
+- (void)setSize:(CGSize)size {
+    CGRect frame = self.frame;
+    frame.size = size;
+    self.frame = frame;
+}
+
+CGFloat kSuitWidthSize(CGFloat value) {
+    return ([[UIScreen mainScreen] bounds].size.width / 375.f) * value;
+}
+
+CGFloat kSuitHeightSize(CGFloat value) {
+    return ([[UIScreen mainScreen] bounds].size.height / 667.f) * value;
 }
 
 - (void)setupColorGradientChangeWithSize:(CGSize)size
@@ -105,86 +179,74 @@ static const void *ext_widthKey;
     self.layer.shadowRadius = shadowRadius;
 }
 
-- (void)setBorderWidth:(CGFloat)borderWidth {
-    objc_setAssociatedObject(self, &ext_widthKey, @(borderWidth), OBJC_ASSOCIATION_ASSIGN);
-}
-
-- (CGFloat)borderWidth {
-    NSNumber *num = objc_getAssociatedObject(self, &ext_widthKey);
-    return num.floatValue;
-}
-
 - (void)setupBoderColor:(UIColor *)color width:(CGFloat)width borderDirection:(ViewBorderDirection)borderDirection {
-    self.borderWidth = width;
     
     if (borderDirection & ViewBorderDirectionTop) {
-        self.topBorder.backgroundColor = color;
-        [self addSubview:self.topBorder];
+        CALayer *border = [CALayer layer];
+        border.backgroundColor = color.CGColor;
+        border.frame = CGRectMake(0.0f, 0.0f, self.bounds.size.width, width);
+        [self.layer addSublayer:border];
     }
     
     if (borderDirection & ViewBorderDirectionBottom) {
-        self.bottomBorder.backgroundColor = color;
-        [self addSubview:self.bottomBorder];
+        CALayer *border = [CALayer layer];
+        border.backgroundColor = color.CGColor;
+        border.frame = CGRectMake(0.0f, self.bounds.size.height - width, self.bounds.size.width, width);
+        [self.layer addSublayer:border];
     }
     
     if (borderDirection & ViewBorderDirectionLeft) {
-        self.leftBorder.backgroundColor = color;
-        [self addSubview:self.leftBorder];
+        CALayer *border = [CALayer layer];
+        border.backgroundColor = color.CGColor;
+        border.frame = CGRectMake(0.0f,0.0f, width,self.bounds.size.height);
+        [self.layer addSublayer:border];
     }
     
     if (borderDirection & ViewBorderDirectionRight) {
-        self.rightBorder.backgroundColor = color;
-        [self addSubview:self.rightBorder];
+        CALayer *border = [CALayer layer];
+        border.backgroundColor = color.CGColor;
+        border.frame = CGRectMake(self.bounds.size.width - width, 0, width, self.bounds.size.height);
+        [self.layer addSublayer:border];
     }
     
     if (borderDirection & ViewBorderDirectionAll) {
-        self.rightBorder.backgroundColor = color;
-        [self addSubview:self.rightBorder];
+        CALayer *border1 = [CALayer layer];
+        border1.backgroundColor = color.CGColor;
+        border1.frame = CGRectMake(0.0f, 0.0f, self.bounds.size.width, width);
+        [self.layer addSublayer:border1];
         
-        self.topBorder.backgroundColor = color;
-        [self addSubview:self.topBorder];
-          
-        self.bottomBorder.backgroundColor = color;
-        [self addSubview:self.bottomBorder];
-          
-        self.leftBorder.backgroundColor = color;
-        [self addSubview:self.leftBorder];
+        CALayer *border2 = [CALayer layer];
+        border2.backgroundColor = color.CGColor;
+        border2.frame = CGRectMake(0.0f, self.bounds.size.height - width, self.bounds.size.width, width);
+        [self.layer addSublayer:border2];
+        
+        CALayer *border3 = [CALayer layer];
+        border3.backgroundColor = color.CGColor;
+        border3.frame = CGRectMake(0.0f,0.0f, width,self.bounds.size.height);
+        [self.layer addSublayer:border3];
+        
+        CALayer *border = [CALayer layer];
+        border.backgroundColor = color.CGColor;
+        border.frame = CGRectMake(self.bounds.size.width - width, 0, width, self.bounds.size.height);
+        [self.layer addSublayer:border];
     }
 }
 
-- (UIView *)topBorder {
-    UIView *v = objc_getAssociatedObject(self, &ext_topBorderKey);
-    if (!v) {
-        v = [[UIView alloc] init];
-        objc_setAssociatedObject(self, &ext_topBorderKey, v, OBJC_ASSOCIATION_RETAIN);
-    }
-    return v;
+- (UIImage *)snapshotImage {
+    UIGraphicsBeginImageContextWithOptions(self.bounds.size, YES, 0);
+    [self drawViewHierarchyInRect:self.bounds afterScreenUpdates:YES];
+    UIImage *result = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return result;
 }
 
-- (UIView *)leftBorder {
-    UIView *v = objc_getAssociatedObject(self, &ext_leftBorderKey);
-    if (!v) {
-        v = [[UIView alloc] init];
-        objc_setAssociatedObject(self, &ext_leftBorderKey, v, OBJC_ASSOCIATION_RETAIN);
+- (UIViewController *)viewController{
+    for (UIView* next = self; next; next = next.superview) {
+        UIResponder* nextResponder = [next nextResponder];
+        if ([nextResponder isKindOfClass:[UIViewController class]]) {
+            return (UIViewController*)nextResponder;
+        }
     }
-    return v;
-}
-
-- (UIView *)rightBorder {
-    UIView *v = objc_getAssociatedObject(self, &ext_rightBorderKey);
-    if (!v) {
-        v = [[UIView alloc] init];
-        objc_setAssociatedObject(self, &ext_rightBorderKey, v, OBJC_ASSOCIATION_RETAIN);
-    }
-    return v;
-}
-
-- (UIView *)bottomBorder {
-    UIView *v = objc_getAssociatedObject(self, &ext_bottomBorderKey);
-    if (!v) {
-        v = [[UIView alloc] init];
-        objc_setAssociatedObject(self, &ext_bottomBorderKey, v, OBJC_ASSOCIATION_RETAIN);
-    }
-    return v;
+    return nil;
 }
 @end

@@ -26,6 +26,25 @@ typedef NS_OPTIONS(NSUInteger, ViewBorderDirection) {
 };
 
 @interface UIView (WDKit)
+
+@property (nonatomic) CGFloat left;
+@property (nonatomic) CGFloat top;
+@property (nonatomic) CGFloat right;
+@property (nonatomic) CGFloat bottom;
+@property (nonatomic) CGFloat width;
+@property (nonatomic) CGFloat height;
+@property (nonatomic) CGFloat centerX;
+@property (nonatomic) CGFloat centerY;
+@property (nonatomic) CGPoint origin;
+@property (nonatomic) CGSize  size;
+
+
+/// 控件尺寸比例处理  `参照4.0 inch`
+CGFloat kSuitWidthSize(CGFloat value);
+
+/// 控件尺寸比例处理 `参照4.0 inch`
+CGFloat kSuitHeightSize(CGFloat value);
+
 /// 设置渐变色
 /// @param size 渐变区域的尺寸
 /// @param direction 渐变方向
@@ -61,6 +80,13 @@ typedef NS_OPTIONS(NSUInteger, ViewBorderDirection) {
 - (void)setupBoderColor:(UIColor *)color
                   width:(CGFloat)width
         borderDirection:(ViewBorderDirection)borderDirection;
+
+
+/// 返回屏幕截图
+- (UIImage *)snapshotImage;
+
+/// 找到自己所在的控制器,判断是否存在之后,使用
+- (UIViewController *)viewController;
 @end
 
 NS_ASSUME_NONNULL_END

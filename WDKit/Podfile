@@ -1,4 +1,5 @@
 target 'WDKit' do
-
+  
+  pod 'Masonry'
 
 end
