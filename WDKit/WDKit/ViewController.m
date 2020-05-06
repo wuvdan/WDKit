@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "UIKitHeader.h"
+#import "WDKit.h"
 #import <Masonry.h>
 #import "TestViewController.h"
 
@@ -76,7 +76,6 @@
     [self.button setTitle:@"按钮文字" forState:UIControlStateNormal];
     self.button.backgroundColor = [UIColor clearColor];
     [self.button setTitleColor:[UIColor systemBlueColor] forState:UIControlStateNormal];
-    self.button.titleLabel.font = [UIFont systemFontOfSize:14];
     [self.view addSubview:self.button];
     
     [self.button setupButtonImageStyle:ButtonImageStyleTop spacing:7];

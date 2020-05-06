@@ -1,13 +1,15 @@
 //
-//  UIKitHeader.h
-//  AllDemo-ObjC
+//  WDKit.h
+//  WDKit
 //
-//  Created by wudan on 2020/4/23.
+//  Created by wudan on 2020/5/6.
 //  Copyright © 2020 wudan. All rights reserved.
 //
 
-#ifndef UIKitHeader_h
-#define UIKitHeader_h
+#ifndef WDKit_h
+#define WDKit_h
+
+#import "WDMacro.h"
 
 #import "Controller.h"
 #import "TableViewController.h"
@@ -25,4 +27,5 @@
 #import "UIFont+WDKit.h"
 #import "UIColor+WDKit.h"
 #import "UINavigationController+WDKit.h"
-#endif /* UIKitHeader_h */
+
+#endif /* WDKit_h */

@@ -48,4 +48,7 @@ UIColor *kRGBAColor(CGFloat r, CGFloat g, CGFloat b, CGFloat a) {
 + (UIColor *)randomColor {
     return kRGBColor(arc4random_uniform(256), arc4random_uniform(256), arc4random_uniform(256));
 }
+
+
+
 @end

@@ -8,7 +8,6 @@
 
 #import "AppDelegate.h"
 #import <UIKit/UIKit.h>
-#import "UIKitHeader.h"
 @interface AppDelegate ()
 
 @end
